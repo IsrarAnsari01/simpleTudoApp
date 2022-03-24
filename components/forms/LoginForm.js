@@ -82,8 +82,11 @@ const LoginForm = ({navigation}) => {
 
   const validate = () => {
     if (
+      formData.email.length &&
       !formData.email.length &&
+      formData.password.length &&
       !formData.password.length &&
+      formData.conformPassword.length &&
       !formData.conformPassword.length
     ) {
       setErrors({
@@ -166,6 +169,7 @@ const LoginForm = ({navigation}) => {
     if (validate()) {
       console.log('Submitted');
       cleanField();
+      return;
     }
     console.log('Validation Failed');
   };

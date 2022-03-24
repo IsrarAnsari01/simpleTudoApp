@@ -130,11 +130,17 @@ const SignUpForm = ({navigation}) => {
 
   const validate = () => {
     if (
+      formData.email.length &&
       !formData.email.length &&
+      formData.password.length &&
       !formData.password.length &&
+      formData.firstName.length &&
       !formData.firstName.length &&
+      formData.lastName.length &&
       !formData.lastName.length &&
+      formData.username.length &&
       !formData.username.length &&
+      formData.address.length &&
       !formData.address.length
     ) {
       setErrors({
@@ -333,10 +339,12 @@ const SignUpForm = ({navigation}) => {
   };
   const signupUser = () => {
     if (validate()) {
-      console.log('Submitted');
+      console.log('I got all req data Submitted');
       cleanField();
+    } else {
+      123456;
+      console.log('Validation Failed');
     }
-    console.log('Validation Failed');
   };
 
   const cleanField = () => {
